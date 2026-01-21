@@ -24,13 +24,13 @@ Use these prefixes so we know what you are working on:
 * **Docs/Misc:** `docs/update-readme`, `chore/cleanup-files`
 
 ### How to Finish
-1.  **Commit your work:** Save your changes with a clear message.
+1.  Commit your work: Save your changes with a clear message.
     * `git add .`
     * `git commit -m "Finished login page layout"`
-2.  **Push your branch:** Upload it to GitHub.
+2.  Push your branch: Upload it to GitHub.
     * `git push origin feature/login-page`
-3.  **Open a Pull Request (PR):** Go to GitHub and open a PR targeting **`development`**.
-4.  **Assign Reviewers:** Select **Christian** and **Ken**.
+3.  Open a Pull Request (PR): Go to GitHub and open a PR targeting **`development`**.
+4.  Assign Reviewers: Select **Christian** and **Ken**.
 5.  **STOP & NOTIFY:** 🛑 **Do NOT merge the code yourself.**
     * Notify Christian or Ken that your PR is ready.
     * We will review, approve, and **we will handle the merge.**
