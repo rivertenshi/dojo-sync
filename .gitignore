@@ -1,0 +1,17 @@
+# --- PHP ---
+/vendor/
+composer.phar
+.env
+.phpunit.result.cache
+
+# --- IDE & OS (Junk files you don't want) ---
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- Frontend (If you use Node/npm later) ---
+/node_modules/
+/dist/
+*.log
