@@ -1,6 +1,5 @@
 <?php
-
-// login page start
+// Signup
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dojo-Sync | Login</title>
+    <title>Dojo-Sync | Sign Up</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,12 +20,12 @@
                         brand: {
                             black: '#121212',   // The very dark background
                             dark: '#1e1e1e',    // The card background
-                            yellow: '#fbbf24',  // The bright yellow accent (adjusted to match mockup)
+                            yellow: '#fbbf24',  // The bright yellow accent
                             input: '#ffffff',   // White input fields
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'], // Assuming a clean sans-serif
+                        sans: ['Inter', 'sans-serif'], 
                     }
                 }
             }
@@ -49,50 +48,61 @@
         
 
         <div class="text-center mb-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-brand-yellow tracking-wide">Welcome Back!</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-yellow tracking-wide">Sign up</h2>
         </div>
 
         <form action="#" method="POST" class="space-y-6">
+
+            <div>
+                <label for="email" class="block text-gray-300 text-sm mb-2 pl-2">Email</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full bg-white text-gray-900 rounded-full py-3 px-6 focus:outline-none focus:ring-4 focus:ring-yellow-500/50 transition-all shadow-inner"
+                    autocomplete="off">
+            </div>
             
             <div>
                 <label for="username" class="block text-gray-300 text-sm mb-2 pl-2">Username</label>
-                <input type="text" id="username" name="username" 
+                <input type="text" id="username" name="username" required
                     class="w-full bg-white text-gray-900 rounded-full py-3 px-6 focus:outline-none focus:ring-4 focus:ring-yellow-500/50 transition-all shadow-inner"
                     autocomplete="off">
             </div>
 
             <div>
                 <label for="password" class="block text-gray-300 text-sm mb-2 pl-2">Password</label>
-                <input type="password" id="password" name="password" 
+                <input type="password" id="password" name="password" required oninput="validatePassword()"
                     class="w-full bg-white text-gray-900 rounded-full py-3 px-6 focus:outline-none focus:ring-4 focus:ring-yellow-500/50 transition-all shadow-inner">
             </div>
 
-            <div class="flex items-center justify-between text-xs md:text-sm px-2">
-                <label class="flex items-center text-gray-300 cursor-pointer hover:text-white transition">
-                    <input type="checkbox" name="remember" class="mr-2 rounded text-brand-yellow focus:ring-brand-yellow">
-                    Remember me
-                </label>
-                <a href="#" class="text-gray-300 hover:text-brand-yellow transition decoration-none">Forgot password?</a>
+            <div>
+                <label for="password2" class="block text-gray-300 text-sm mb-2 pl-2">Confirm password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required oninput="validatePassword()"
+                    class="w-full bg-white text-gray-900 rounded-full py-3 px-6 focus:outline-none focus:ring-4 focus:ring-yellow-500/50 transition-all shadow-inner">
             </div>
+
 
             <div class="pt-4">
                 <button type="submit" 
                     class="w-full bg-brand-yellow text-gray-900 font-bold rounded-full py-3 hover:bg-yellow-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-200 text-lg">
-                    Log in
+                   Sign up
                 </button>
             </div>
 
-        </form>
-        <form action="/signup.php">
-            <div class="pt-4">
-                <label class="flex items-center text-gray-300 cursor-pointer hover:text-white transition">No account yet?</label>
-                <button type="submit" 
-                    class="w-full bg-brand-dark border border-brand-yellow text-brand-yellow font-bold rounded-full py-3 hover:text-gray-900 hover:bg-yellow-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-200 text-lg">
-                    Sign up
-                </button>
-            </div>
         </form>
     </div>
 
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password");
+            var confirm_password = document.getElementById("confirm_password");
+
+            if(password.value != confirm_password.value) {
+                // Error alert for password
+                confirm_password.setCustomValidity("Passwords do not match.");
+            } else {
+                // Clear error
+                confirm_password.setCustomValidity('');
+            }
+        }
+    </script>
 </body>
 </html>
